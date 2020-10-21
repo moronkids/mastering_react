@@ -1,0 +1,16 @@
+.Person {
+    width: 60%;
+
+    margin: auto;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 2px 3px #cccccc;
+    text-align: center;
+    /* margin-bottom: 10px; */
+    padding-bottom: 20px;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .Person {
+    width: 90%;
+  }
+}

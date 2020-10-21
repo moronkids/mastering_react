@@ -15,7 +15,7 @@ class App extends Component {
     otherState : 'duarr'
   }
 
-  gantiHobiHandler = () => {
+  gantiHobiHandler = (duar) => {
     console.log('This Clicked');
     // this.state.hobbies[0].hobi = 'Ihik dong'
     this.setState({
@@ -24,19 +24,44 @@ class App extends Component {
           hobi: 'gelut ayo'
         },
         {
-          hobi: 'ampun den'
+          hobi: duar
+        }
+      ]
+    });
+  }
+
+  gantiHobiInput = (event) => {
+    // console.log();
+    this.setState({
+      hobbies: [
+        {
+          hobi: event.target.value
+        },
+        {
+          hobi: 'manciki risma'
         }
       ]
     });
   }
   render() {
+    const style = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer'
+    }
     return (
       <div className="App">
         <h1>tes</h1>
-        <button onClick={this.gantiHobiHandler}>Ganti Hobi</button>
+        {/* //using bind */}
+        {/* <button onClick={this.gantiHobiHandler.bind(this, 'Mancik')}>Ganti Hobi</button> */}
+        {/* using arrow function */}
+
+        <button style={style} onClick={() => this.gantiHobiHandler('Mancikk i bojomu')}>Ganti Hobi</button>
         {/* hobbies is a props */}
-        <Person hobbies={this.state.hobbies[0].hobi}/>
-        <Person hobbies="kentu">jancuk</Person>
+        <Person hobi={this.gantiHobiInput} hobbies={this.state.hobbies[0].hobi}/>
+        <Person click={this.gantiHobiHandler.bind(this, 'Mancing')} hobbies="kentu">jancuk</Person>
         <Person hobbies={this.state.hobbies[1].hobi}/>
 
 
