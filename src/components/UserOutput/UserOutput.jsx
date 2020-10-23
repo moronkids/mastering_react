@@ -1,7 +1,8 @@
 import { div } from 'prelude-ls';
 import React from 'react';
 import { Card, Grid, TextField, Input, InputLabel } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+// import { makeStyles } from '@material-ui/styles';
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 const userOutput = (props) => {
     console.log(props)
     const style = {
@@ -30,7 +31,7 @@ const userOutput = (props) => {
     return (
         <div className={classes.alignItemsAndJustifyContent}>
             <Card  style={style} >
-                <p>{props.teks}</p>
+                {props.teks}
             </Card>
         </div>
     );
