@@ -19,20 +19,18 @@ const userOutput = (props) => {
             margin: 'auto'
         },
         alignItemsAndJustifyContent: {
-
-            height: 80,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            paddingTop : 50
-            
+            paddingTop : 5
+
         },
     }))
     const classes = useStyles()
     return (
         <div className={classes.alignItemsAndJustifyContent}>
             <Card  style={style} >
-                <p>{props.teks == 'Risma ihik kuy!' || props.teks == '' ? 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquam nesciunt voluptatibus nulla obcaecati aliquid molestiae ipsa id, voluptatem tempora a harum deleniti officia unde nisi corporis nemo omnis ipsum.' : props.teks}</p>
+                <p>{props.teks}</p>
             </Card>
         </div>
     );
