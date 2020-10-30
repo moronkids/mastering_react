@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Radium, {StyleRoot} from 'radium'
 import logo from "./logo.svg";
 import "./App.css";
 import Person from "./Person/Person";
@@ -68,6 +69,10 @@ class App extends Component {
       border: "1px solid blue",
       padding: "8px",
       cursor: "pointer",
+      ':hover' : {
+        backgroundColor: 'lightgreen',
+        color : 'black'
+      }
     };
 
     let persons = null;
@@ -98,7 +103,13 @@ class App extends Component {
           <Person hobbies={this.state.hobbies[1].hobi} /> */}
         </div>
       );
+      style.backgroundColor = 'red';
+      style[':hover'] = {
+        backgroundColor: 'blue',
+        color : 'black'
+      }
     }
+
 
     let classes = ['red', 'bold'];
     if (persons != null) {
@@ -114,9 +125,10 @@ class App extends Component {
     else {
       console.log('dont to anything')
     }
-
+    console.log(style,'style')
     return (
-      <div className="App">
+      <StyleRoot>
+        <div className="App">
         <h1 className={classes}>tes</h1>
         {/* //using bind */}
         {/* <button onClick={this.gantiHobiHandler.bind(this, 'Mancik')}>Ganti Hobi</button> */}
@@ -138,8 +150,10 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p> */}
       </div>
+      </StyleRoot>
     );
   }
 }
 
-export default App;
+export default Radium(App);
+// radium as a hoc / high order components
