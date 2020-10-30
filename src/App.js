@@ -62,7 +62,8 @@ class App extends Component {
   };
   render() {
     const style = {
-      backgroundColor: "white",
+      backgroundColor: "green",
+      color: "white",
       font: "inherit",
       border: "1px solid blue",
       padding: "8px",
@@ -98,9 +99,25 @@ class App extends Component {
         </div>
       );
     }
+
+    let classes = ['red', 'bold'];
+    if (persons != null) {
+      classes.map((value, key) => {
+        
+        if(value == 'red'){
+          console.log('delete red')
+          classes.splice(key, 1)
+          classes = ['red', 'bold'].join(' ');
+        } 
+      })
+    }
+    else {
+      console.log('dont to anything')
+    }
+
     return (
       <div className="App">
-        <h1>tes</h1>
+        <h1 className={classes}>tes</h1>
         {/* //using bind */}
         {/* <button onClick={this.gantiHobiHandler.bind(this, 'Mancik')}>Ganti Hobi</button> */}
         {/* using arrow function */}
