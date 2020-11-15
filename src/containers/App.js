@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Radium, {StyleRoot} from 'radium'
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
-import Person from "./Person/Person";
+import Person from "../components/Persons/Person/Person";
+
 class App extends Component {
   state = {
     hobbies: [
@@ -42,9 +43,8 @@ class App extends Component {
     }
   };
 
-  iniKey = () => {
 
-  }
+
   gantiHobiInput = (event, id) => {
     // const personIndex = this.state.hobbies.findIndex(p => { return p.id == id});
     // console.log(personIndex, 'sd')
@@ -53,8 +53,8 @@ class App extends Component {
 
     }
     person.hobi = event.target.value;
-    console.log(person)  
-    
+    console.log(person)
+
     const persons = [...this.state.hobbies]
 
     persons[id] = person;
@@ -114,12 +114,12 @@ class App extends Component {
     let classes = ['red', 'bold'];
     if (persons != null) {
       classes.map((value, key) => {
-        
+
         if(value == 'red'){
           console.log('delete red')
           classes.splice(key, 1)
           classes = ['red', 'bold'].join(' ');
-        } 
+        }
       })
     }
     else {
@@ -128,6 +128,7 @@ class App extends Component {
     console.log(style,'style')
     return (
       <StyleRoot>
+        {/* styleroot digunakan saat kita ingin menggunakan media queries di inline style */}
         <div className="App">
         <h1 className={classes}>tes</h1>
         {/* //using bind */}
